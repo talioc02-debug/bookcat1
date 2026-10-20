@@ -238,7 +238,7 @@ footer{text-align:center;color:#6a7a99;font-size:.85rem;padding:20px 16px 90px}
 
 /* ===== CATERINA — interactive book layout (extends the lesson stylesheet) ===== */
 body{background-attachment:fixed}
-.app{display:flex;min-height:100vh;align-items:flex-start}
+.app{display:grid;grid-template-columns:292px minmax(0,1fr);min-height:100vh;align-items:start}
 #side{width:292px;flex:0 0 292px;position:sticky;top:0;height:100vh;overflow-y:auto;background:linear-gradient(180deg,#1F3F73 0%,#2B5C9E 55%,#3E7CC1 100%);color:#fff;padding:14px 12px 96px;z-index:90;scrollbar-width:thin;box-shadow:4px 0 18px rgba(31,63,115,.25)}
 .brand{text-align:center;padding:6px 6px 12px;border-bottom:2px dashed rgba(255,255,255,.35)}
 .brand .t{font-family:'Playfair Display',Georgia,serif;font-size:2.1rem;letter-spacing:5px;color:#FFE08A;line-height:1.1;text-shadow:0 2px 6px rgba(0,0,0,.25)}
@@ -258,10 +258,10 @@ body{background-attachment:fixed}
 .sgroup.teacher h4{color:#FFE08A}
 .stool{margin-top:16px;display:flex;flex-direction:column;gap:8px}
 .stool .toggle-it{justify-content:center;font-size:.85rem}
-#main{flex:1;min-width:0;padding:20px 24px 120px}
+#main{min-width:0;width:100%;padding:20px 24px 120px;justify-self:stretch}
 #top{display:none}
 #scrim{display:none}
-.page{display:none;max-width:920px;margin:0 auto}
+.page{display:none;max-width:1120px;margin:0 auto}
 .page.cur{display:block;animation:fadein .45s}
 .paper{background:var(--paper);border-radius:22px;box-shadow:var(--shadow);padding:24px 26px 28px;border:1px solid #E8E1D0;position:relative}
 .paper::before{content:"";position:absolute;inset:6px;border-radius:17px;border:2px dashed rgba(142,201,238,.5);pointer-events:none}
@@ -439,6 +439,15 @@ figure.pic figcaption{font-style:italic;font-size:.88rem;color:#55627f;text-alig
   .idwrap{grid-template-columns:1fr}
   .idform{display:none}
 }
+
+/* big screens: scale the whole book up so it fills the window (layout width stays ~1300-1500px) */
+@media screen and (min-width:1600px){html{zoom:1.15}}
+@media screen and (min-width:1900px){html{zoom:1.35}}
+@media screen and (min-width:2200px){html{zoom:1.6}}
+@media screen and (min-width:2600px){html{zoom:1.9}}
+@media screen and (min-width:3000px){html{zoom:2.2}}
+@media screen and (min-width:3500px){html{zoom:2.6}}
+@media screen and (min-width:4200px){html{zoom:3.2}}
 
 .songcard{display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:linear-gradient(135deg,#fff3c4,#ffd9ec);border:3px solid #f2b705;border-radius:22px;padding:16px 18px;margin:10px 0}.songcard .sc-note{font-size:48px}.songcard span{font-size:.95em;color:#5b4a7a}.ytbig{margin-left:auto;background:#d93a27;color:#fff;font-weight:800;font-size:1.15em;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 5px 0 #a82a1b}.ytbig:active{transform:translateY(3px);box-shadow:0 2px 0 #a82a1b}.tryhere{margin:6px 0 12px}.tryhere summary{cursor:pointer;color:#7a5b9a;font-size:.9em}
 .it-always{font-style:italic;color:#7a5b9a;font-size:.9em}
